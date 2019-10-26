@@ -12,6 +12,11 @@ import HeatmapLayer from 'react-google-maps/lib/components/visualization/Heatmap
 
 const MapWithAMarker = withScriptjs(withGoogleMap(({ heatmap }) => {
 
+    const heatmapWithLatLon = heatmap.map(heatmapRaw => ({
+        location: new window.google.maps.LatLng(heatmapRaw.latitude, heatmapRaw.longitude),
+        weight: heatmapRaw.weight
+    }));
+
     return <GoogleMap
         defaultZoom={14}
         options={{ minZoom: 14, maxZoom: 14, zoomControl: false }}
@@ -21,7 +26,7 @@ const MapWithAMarker = withScriptjs(withGoogleMap(({ heatmap }) => {
             position={{ lat: 60.166557, lng: 24.931950 }}
         />
         <HeatmapLayer
-            data={heatmap}
+            data={heatmapWithLatLon}
             options={{
                 radius: 40,
             }} />

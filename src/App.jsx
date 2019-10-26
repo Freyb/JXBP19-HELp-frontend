@@ -9,7 +9,7 @@ import queryHeatmap from "./util/queryHeatmap";
 function App() {
   const [heatmap, changeHeatmap] = useState([]);
   const onChangePrefs = async newPrefs => {
-    changeHeatmap(await queryHeatmap(newPrefs));
+    changeHeatmap(await queryHeatmap({ tags: newPrefs }));
   }
 
   return (
