@@ -1,14 +1,16 @@
-import React from 'react';
-import { Container, Row, Col } from 'reactstrap';
-import Map from './components/Map';
-import './App.css';
+import React from "react";
+import { Container, Row, Col } from "reactstrap";
+import Map from "./components/Map";
+import Dropdown from "./components/Dropdown";
+
+import "./App.css";
 
 function App() {
   return (
     <Container fluid>
       <Row>
         <Col md="3">
-          <p>Form</p>
+          <Dropdown />
         </Col>
         <Col md="9">
           <Map />
