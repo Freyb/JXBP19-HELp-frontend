@@ -5,7 +5,7 @@ import {
   DropdownMenu,
   DropdownItem,
   Card,
-  CardBody
+  CardBody, CardTitle
 } from "reactstrap";
 import ListItem from "./ListItem";
 import "./prefdropdown.css";
@@ -40,11 +40,11 @@ function Prefdropdown(props) {
   };
 
   return (
-    <div className="d-flex h-100 flex-column">
-      <h1 class="title">HELp</h1>
-      <h2 class="subtitle mb-4">Helsinki Enterprise Location Planner</h2>
+    <div className="h-100 prefdropdown">
+      <h1 className="title">HELp</h1>
+      <h2 className="subtitle mb-4">Helsinki Enterprise Location Planner</h2>
 
-      <Card className="shadow-lg flex-grow-1 mb-4">
+      <Card className="shadow-lg mb-4">
         <CardBody>
           <Dropdown isOpen={dropdownOpen} toggle={toggle} className="mx-auto w-75">
             <DropdownToggle caret className="w-100 mb-5">Tags</DropdownToggle>
@@ -66,6 +66,16 @@ function Prefdropdown(props) {
           ))}
         </CardBody>
       </Card>
+
+      {props.places && <Card className="shadow-lg flex-grow-1 mb-4 py-4">
+        <CardTitle className="h4 text-center">Places nearby</CardTitle>
+        <CardBody className="px-0">
+          {props.places.map(place =>
+            <a className="place-name" href="#">{place.name}</a>
+          )}
+        </CardBody>
+      </Card>
+      }
     </div>
   );
 }

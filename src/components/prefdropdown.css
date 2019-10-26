@@ -9,7 +9,9 @@
     margin-top: 1rem;
     padding: 1rem;
 }
-
+.prefdropdown .card {
+    min-height: 300px;
+}
 .title {
     font-size: 7rem;
     font-weight: normal;
@@ -18,4 +20,15 @@
     font-size: 1.5rem;
     font-weight: normal;
     font-style: italic;
+}
+
+.place-name {
+    font-weight: bold;
+    padding: 1rem 2rem;
+    display: block;
+}
+
+.place-name:hover {
+    text-decoration: none;
+    background-color: lightgray;
 }
