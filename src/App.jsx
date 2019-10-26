@@ -6,11 +6,13 @@ import Prefdropdown from "./components/Prefdropdown";
 import "./App.css";
 
 function App() {
+  const notify = data => console.log(data);
+
   return (
     <Container fluid>
       <Row>
         <Col md="3">
-          <Prefdropdown />
+          <Prefdropdown onChange={notify} />
         </Col>
         <Col md="9">
           <Map />

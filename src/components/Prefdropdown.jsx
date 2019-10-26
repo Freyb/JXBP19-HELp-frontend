@@ -9,26 +9,35 @@ import ListItem from "./ListItem";
 import "./prefdropdown.css";
 import data from "../tags_list";
 
-function Prefdropdown() {
+function Prefdropdown(props) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const toggle = () => setDropdownOpen(!dropdownOpen);
 
   const [selectedItems, changeSelection] = useState([
     { name: "test", pref: 1 }
   ]);
-  const addEvent = event =>
-    changeSelection([
+  const addEvent = event => {
+    const newData = [
       ...selectedItems,
-      { name: event.currentTarget.value, pref: 0 }
-    ]);
+      { name: event.currentTarget.value, pref: 2 }
+    ];
+    changeSelection(newData);
+    props.onChange(newData);
+  };
 
-  const changePref = (name, pref) =>
-    changeSelection(
-      selectedItems.map(d => (d.name === name ? { name, pref } : d))
+  const changePref = (name, pref) => {
+    const newData = selectedItems.map(d =>
+      d.name === name ? { name, pref } : d
     );
+    changeSelection(newData);
+    props.onChange(newData);
+  };
 
-  const deletePref = name =>
-    changeSelection(selectedItems.filter(d => d.name !== name));
+  const deletePref = name => {
+    const newData = selectedItems.filter(d => d.name !== name);
+    changeSelection(newData);
+    props.onChange(newData);
+  };
 
   return (
     <div className={"sidebarcontainer"}>

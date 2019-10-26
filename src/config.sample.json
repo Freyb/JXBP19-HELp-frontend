@@ -1,4 +1,4 @@
 {
-    "googleMapsKey": "<key>",
-    "backendUrl": "http://localhost:5000",
+  "googleMapsKey": "<key>",
+  "backendUrl": "http://localhost:5000"
 }
