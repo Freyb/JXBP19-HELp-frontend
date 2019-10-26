@@ -5,7 +5,6 @@ import {
     withScriptjs,
     withGoogleMap,
     GoogleMap,
-    Marker,
 } from "react-google-maps";
 import HeatmapLayer from 'react-google-maps/lib/components/visualization/HeatmapLayer';
 
@@ -22,9 +21,6 @@ const MapWithAMarker = withScriptjs(withGoogleMap(({ heatmap }) => {
         options={{ minZoom: 14, maxZoom: 14, zoomControl: false }}
         defaultCenter={{ lat: 60.166557, lng: 24.931950 }}
     >
-        <Marker
-            position={{ lat: 60.166557, lng: 24.931950 }}
-        />
         <HeatmapLayer
             data={heatmapWithLatLon}
             options={{
