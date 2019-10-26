@@ -1,0 +1,16 @@
+.prefcirclecontainer{
+    display: flex;
+    align-items: center;
+}
+.prefcircle {
+    width: 15px;
+    height: 15px;
+    border: solid 2px black;
+    border-radius: 100px;
+    margin: 0 0.1rem;
+    cursor: pointer;
+}
+
+.activecircle {
+    background-color: red;
+}

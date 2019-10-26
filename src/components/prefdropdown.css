@@ -1,4 +1,17 @@
+.sidebarcontainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 .mydropdown {
     height: 90vh;
     overflow-y: scroll;
+}
+
+.taglistcontainer {
+    flex-grow: 1;
+    border: 1px solid black;
+    margin-top: 1rem;
+    padding: 0.25rem;
 }
