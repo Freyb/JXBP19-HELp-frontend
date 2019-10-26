@@ -54,7 +54,7 @@ function Prefdropdown(props) {
       <div className={"taglistcontainer"}>
         {selectedItems.map(d => (
           <ListItem
-            key={d}
+            key={d.name}
             data={d}
             onChange={changePref}
             onDelete={deletePref}
