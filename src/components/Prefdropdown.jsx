@@ -3,7 +3,9 @@ import {
   Dropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem
+  DropdownItem,
+  Card,
+  CardBody
 } from "reactstrap";
 import ListItem from "./ListItem";
 import "./prefdropdown.css";
@@ -38,27 +40,32 @@ function Prefdropdown(props) {
   };
 
   return (
-    <div className={"sidebarcontainer"}>
-      <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-        <DropdownToggle caret>Dropdown</DropdownToggle>
-        <DropdownMenu className={"mydropdown"}>
-          {[...data].sort().map(d => (
-            <DropdownItem key={d} value={d} onClick={addEvent}>
-              {d}
-            </DropdownItem>
+    <div className="d-flex h-100 flex-column">
+      <h1 class="title">HELp</h1>
+      <h2 class="subtitle mb-4">Helsinki Enterprise Location Planner</h2>
+
+      <Card className="shadow-lg flex-grow-1 mb-4">
+        <CardBody>
+          <Dropdown isOpen={dropdownOpen} toggle={toggle} className="mx-auto w-75">
+            <DropdownToggle caret className="w-100 mb-5">Tags</DropdownToggle>
+            <DropdownMenu className={"mydropdown w-100"}>
+              {[...data].sort().map(d => (
+                <DropdownItem key={d} value={d} onClick={addEvent}>
+                  {d}
+                </DropdownItem>
+              ))}
+            </DropdownMenu>
+          </Dropdown>
+          {selectedItems.map(d => (
+            <ListItem
+              key={d.name}
+              data={d}
+              onChange={changePref}
+              onDelete={deletePref}
+            />
           ))}
-        </DropdownMenu>
-      </Dropdown>
-      <div className={"taglistcontainer"}>
-        {selectedItems.map(d => (
-          <ListItem
-            key={d.name}
-            data={d}
-            onChange={changePref}
-            onDelete={deletePref}
-          />
-        ))}
-      </div>
+        </CardBody>
+      </Card>
     </div>
   );
 }

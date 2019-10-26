@@ -20,7 +20,7 @@ function App() {
         <Col md="3">
           <Prefdropdown onChange={onChangePrefs} />
         </Col>
-        <Col md="9">
+        <Col md="9" className="p-0">
           <Map heatmap={heatmap} />
         </Col>
       </Row>

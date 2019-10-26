@@ -1,9 +1,3 @@
-.sidebarcontainer {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
 .mydropdown {
     max-height: 90vh;
     overflow-y: auto;
@@ -13,5 +7,15 @@
     flex-grow: 1;
     border: 1px solid black;
     margin-top: 1rem;
-    padding: 0.25rem;
+    padding: 1rem;
+}
+
+.title {
+    font-size: 7rem;
+    font-weight: normal;
+}
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: normal;
+    font-style: italic;
 }
