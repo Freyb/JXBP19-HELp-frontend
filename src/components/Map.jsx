@@ -38,6 +38,7 @@ const MapWithAMarker = withScriptjs(withGoogleMap(props => {
     ]
     return <GoogleMap
         defaultZoom={14}
+        options={{ minZoom: 14, maxZoom: 14, zoomControl: false }}
         defaultCenter={{ lat: 60.166557, lng: 24.931950 }}
     >
         <Marker
