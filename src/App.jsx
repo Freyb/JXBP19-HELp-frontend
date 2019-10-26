@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import Map from "./components/Map";
-import Dropdown from "./components/Dropdown";
+import Prefdropdown from "./components/Prefdropdown";
 
 import "./App.css";
 
@@ -10,7 +10,7 @@ function App() {
     <Container fluid>
       <Row>
         <Col md="3">
-          <Dropdown />
+          <Prefdropdown />
         </Col>
         <Col md="9">
           <Map />
