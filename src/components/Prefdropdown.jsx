@@ -14,7 +14,7 @@ function Prefdropdown(props) {
   const toggle = () => setDropdownOpen(!dropdownOpen);
 
   const [selectedItems, changeSelection] = useState([
-    { name: "test", pref: 1 }
+    { name: "Sauna", pref: 3 }
   ]);
   const addEvent = event => {
     const newData = [
