@@ -4,6 +4,7 @@
   background-color: lightseagreen;
   padding: 0.5rem 1rem;
   margin: 0.5rem 0;
+  align-items: center;
 }
 
 .prefListName {
@@ -12,14 +13,36 @@
 }
 
 .prefListPrefcontainer {
-    flex-basis: 30%;
-    align-items: center;
-    display: flex;
+  flex-basis: 30%;
+  align-items: center;
+  display: flex;
 }
 
 .prefXmark {
-    height: 15px;
-    width: 15px;
-    position: relative;
+  height: 15px;
+  width: 15px;
+  position: relative;
+  margin-right: 0.5rem;
+  cursor: pointer;
 }
 
+.prefXmark::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 2px;
+  background-color: black;
+  content: "";
+  transform: translateX(-50%) rotate(-45deg);
+}
+.prefXmark::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 2px;
+  background-color: black;
+  content: "";
+  transform: translateX(-50%) rotate(45deg);
+}
