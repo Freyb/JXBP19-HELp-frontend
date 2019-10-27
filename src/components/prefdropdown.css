@@ -1,3 +1,7 @@
+.dropdowncard {
+    z-index: 1;
+}
+
 .mydropdown {
     max-height: 90vh;
     overflow-y: auto;

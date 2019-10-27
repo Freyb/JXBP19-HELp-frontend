@@ -47,7 +47,7 @@ function Prefdropdown(props) {
       <h1 className="title">HELp</h1>
       <h2 className="subtitle mb-4">Helsinki Enterprise Location Planner</h2>
 
-      <Card className="shadow-lg mb-4 animated bounceInLeft">
+      <Card className="shadow-lg mb-4 animated bounceInLeft dropdowncard">
         <CardBody>
           <Dropdown isOpen={dropdownOpen} toggle={toggle} className="mx-auto w-75">
             <DropdownToggle caret className="w-100 mb-5">Tags</DropdownToggle>
