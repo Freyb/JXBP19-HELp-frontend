@@ -5,7 +5,8 @@ import {
   DropdownMenu,
   DropdownItem,
   Card,
-  CardBody, CardTitle
+  CardBody, CardTitle,
+  Row, Col
 } from "reactstrap";
 import ListItem from "./ListItem";
 import "./prefdropdown.css";
@@ -44,8 +45,19 @@ function Prefdropdown(props) {
 
   return (
     <div className="h-100 prefdropdown">
-      <h1 className="title">HELp</h1>
-      <h2 className="subtitle mb-4">Helsinki Enterprise Location Planner</h2>
+      <Row className="align-items-center">
+        <Col xs={3}>
+          <img src="/logo192.png" className="w-100" />
+        </Col>
+        <Col xs={9}>
+          <h1 className="title">HELp</h1>
+        </Col>
+      </Row>
+      <Row>
+        <Col xs={{ size: 9, offset: 3 }}>
+          <h2 className="subtitle mb-4">Helsinki Enterprise Location Planner</h2>
+        </Col>
+      </Row>
 
       <Card className="shadow-lg mb-4 dropdowncard">
         <CardBody>

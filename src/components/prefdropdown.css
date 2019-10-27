@@ -21,9 +21,9 @@
     font-weight: normal;
 }
 .subtitle {
-    font-size: 1.5rem;
-    font-weight: normal;
-    font-style: italic;
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-left: 0.5rem;
 }
 
 .place-name {
