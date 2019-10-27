@@ -27,6 +27,7 @@ function App() {
   const [marker, setMarker] = useState();
 
   const onChangePrefs = async newPrefs => {
+    animateCSS('.dropdowncard', 'pulse')
     const heatmapData = await queryHeatmap({ tags: newPrefs });
     console.log("Heatmap: ", heatmapData)
     setHeatmap(heatmapData);
