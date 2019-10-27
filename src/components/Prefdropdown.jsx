@@ -44,7 +44,7 @@ function Prefdropdown(props) {
       <h1 className="title">HELp</h1>
       <h2 className="subtitle mb-4">Helsinki Enterprise Location Planner</h2>
 
-      <Card className="shadow-lg mb-4">
+      <Card className="shadow-lg mb-4 animated bounceInLeft">
         <CardBody>
           <Dropdown isOpen={dropdownOpen} toggle={toggle} className="mx-auto w-75">
             <DropdownToggle caret className="w-100 mb-5">Tags</DropdownToggle>
@@ -67,7 +67,7 @@ function Prefdropdown(props) {
         </CardBody>
       </Card>
 
-      {props.places && <Card className="shadow-lg flex-grow-1 mb-4 py-4">
+      {props.places && <Card className="shadow-lg flex-grow-1 mb-4 py-4 animated bounceInLeft">
         <CardTitle className="h4 text-center">Places nearby</CardTitle>
         <CardBody className="px-0">
           {props.places.map(place =>
