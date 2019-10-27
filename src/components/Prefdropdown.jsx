@@ -19,8 +19,8 @@ function Prefdropdown(props) {
   const [selectedItems, changeSelection] = useState([]);
   const addEvent = event => {
     const newData = [
-      ...selectedItems,
-      { name: event.currentTarget.value, pref: 2 }
+      ...selectedItems.map(({ name, pref }) => ({ name, pref })), // remove new: true
+      { name: event.currentTarget.value, pref: 2, new: true }
     ];
     const filteredNewData = newData.filter((v, i, a) => a.indexOf(v) === i);
     if (newData.length === filteredNewData.length) {
@@ -77,6 +77,7 @@ function Prefdropdown(props) {
               data={d}
               onChange={changePref}
               onDelete={deletePref}
+              animate={d.new}
             />
           ))}
         </CardBody>

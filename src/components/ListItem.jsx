@@ -5,7 +5,7 @@ import "./listitem.css";
 
 function ListItem(props) {
   return (
-    <div className={"prefListContainer"}>
+    <div className={"prefListContainer" + (props.animate ? " animated pulse faster" : "")}>
       <div
         className={"prefXmark"}
         onClick={e => props.onDelete(props.data.name)}
