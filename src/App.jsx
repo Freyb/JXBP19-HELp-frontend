@@ -18,7 +18,7 @@ function App() {
     <Container fluid>
       <Row>
         <Col md="3">
-          <Prefdropdown onChange={onChangePrefs} places={[{ "name": "Helsinkee Sauna" }, { "name": "BeEr" }, { "name": "BeerSauna" },]} />
+          <Prefdropdown onChange={onChangePrefs} places={[{ "name": "Helsinkee Sauna", "id": 1 }, { "name": "BeEr", "id": 2 }, { "name": "BeerSauna", "id": 3 },]} />
         </Col>
         <Col md="9" className="p-0">
           <Map heatmap={heatmap} />
