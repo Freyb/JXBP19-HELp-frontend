@@ -18,15 +18,15 @@ function Prefdropdown(props) {
 
   const [selectedItems, changeSelection] = useState([]);
   const addEvent = event => {
+    const name = event.currentTarget.value;
+    if (selectedItems.map(({ name }) => name).includes(name))
+      return;
     const newData = [
       ...selectedItems.map(({ name, pref }) => ({ name, pref })), // remove new: true
-      { name: event.currentTarget.value, pref: 2, new: true }
+      { name, pref: 2, new: true }
     ];
-    const filteredNewData = newData.filter((v, i, a) => a.indexOf(v) === i);
-    if (newData.length === filteredNewData.length) {
-      changeSelection(newData);
-      props.onChange(newData);
-    }
+    changeSelection(newData);
+    props.onChange(newData);
   };
 
   const changePref = (name, pref) => {

@@ -20,7 +20,21 @@ const MapWithAMarker = withScriptjs(withGoogleMap(({ heatmap, onClick, marker })
     return <GoogleMap
         onClick={onClick}
         defaultZoom={14}
-        options={{ minZoom: 14, maxZoom: 14, zoomControl: false }}
+        options={{
+            minZoom: 14,
+            maxZoom: 14,
+            zoomControl: false,
+            clickableIcons: false,
+            restriction: {
+                latLngBounds:
+                {
+                    north: 60.185437,
+                    south: 60.141590,
+                    west: 24.889979,
+                    east: 25.002071
+                }
+            }
+        }}
         defaultCenter={{ lat: 60.166557, lng: 24.931950 }}
     >
         <HeatmapLayer
