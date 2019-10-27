@@ -87,7 +87,7 @@ function Prefdropdown(props) {
         <CardTitle className="h4 text-center">Places nearby</CardTitle>
         <CardBody className="px-0">
           {props.places.map(place =>
-            <a className="place-name" href={place.website || "#"} key={place.id}>{place.name}</a>
+            <a className="place-name" href={place.website || "#"} target="_blank" key={place.id}>{place.name}</a>
           )}
         </CardBody>
       </Card>

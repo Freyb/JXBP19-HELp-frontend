@@ -27,6 +27,7 @@ function App() {
   const [tags, setTags] = useState([])
 
   const updatePlaces = async (markerPosition, tags) => {
+    console.log(markerPosition);
     if (!markerPosition) {
       setPlaces(undefined);
       return;
@@ -44,7 +45,7 @@ function App() {
   }
   const onMapClick = async (event) => {
     setMarkerPosition(event.latLng);
-    updatePlaces(event.latLng, tags)
+    updatePlaces({ lat: event.latLng.lat(), lng: event.latLng.lng() }, tags)
     console.log("Places: ", places)
   }
 
