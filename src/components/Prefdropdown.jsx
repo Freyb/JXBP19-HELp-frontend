@@ -5,7 +5,8 @@ import {
   DropdownMenu,
   DropdownItem,
   Card,
-  CardBody, CardTitle
+  CardBody, CardTitle,
+  Row, Col
 } from "reactstrap";
 import ListItem from "./ListItem";
 import "./prefdropdown.css";
@@ -44,10 +45,21 @@ function Prefdropdown(props) {
 
   return (
     <div className="h-100 prefdropdown">
-      <h1 className="title">HELp</h1>
-      <h2 className="subtitle mb-4">Helsinki Enterprise Location Planner</h2>
+      <Row className="align-items-center">
+        <Col xs={3}>
+          <img src="/logo192.png" className="w-100" />
+        </Col>
+        <Col xs={9}>
+          <h1 className="title">HELp</h1>
+        </Col>
+      </Row>
+      <Row>
+        <Col xs={{ size: 9, offset: 3 }}>
+          <h2 className="subtitle mb-4">Helsinki Enterprise Location Planner</h2>
+        </Col>
+      </Row>
 
-      <Card className="shadow-lg mb-4 animated bounceInLeft">
+      <Card className="shadow-lg mb-4 dropdowncard">
         <CardBody>
           <Dropdown isOpen={dropdownOpen} toggle={toggle} className="mx-auto w-75">
             <DropdownToggle caret className="w-100 mb-5">Tags</DropdownToggle>
@@ -70,11 +82,11 @@ function Prefdropdown(props) {
         </CardBody>
       </Card>
 
-      {props.places && <Card className="shadow-lg flex-grow-1 mb-4 py-4 animated bounceInLeft">
+      {props.places && <Card className="shadow-lg flex-grow-1 mb-4 py-4 placescard">
         <CardTitle className="h4 text-center">Places nearby</CardTitle>
         <CardBody className="px-0">
           {props.places.map(place =>
-            <a className="place-name" href="#">{place.name}</a>
+            <a className="place-name" href="#" key={place.id}>{place.name}</a>
           )}
         </CardBody>
       </Card>
