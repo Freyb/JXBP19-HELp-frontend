@@ -52,7 +52,7 @@ function App() {
   return (
     <Container fluid>
       <Row>
-        <Col md="3">
+        <Col md="3" style={{ height: '100vh', overflowY: 'auto' }}>
           <Prefdropdown onChange={onChangePrefs} places={places} />
         </Col>
         <Col md="9" className="p-0">
