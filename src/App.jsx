@@ -8,7 +8,6 @@ import queryPlaces from "./util/queryPlaces";
 
 function animateCSS(element, animationName, callback) {
   const node = document.querySelector(element)
-  console.log(node)
   node.classList.add('animated', 'faster', animationName)
 
   function handleAnimationEnd() {
@@ -23,20 +22,30 @@ function animateCSS(element, animationName, callback) {
 
 function App() {
   const [heatmap, setHeatmap] = useState([]);
-  const [places, setPlaces] = useState([]);
-  const [marker, setMarker] = useState();
+  const [places, setPlaces] = useState();
+  const [markerPosition, setMarkerPosition] = useState();
+  const [tags, setTags] = useState([])
+
+  const updatePlaces = async (markerPosition, tags) => {
+    if (!markerPosition) {
+      setPlaces(undefined);
+      return;
+    }
+    setPlaces(await queryPlaces(markerPosition.lat, markerPosition.lng, tags.map(tag => tag.name)));
+    animateCSS('.placescard', 'pulse');
+  }
 
   const onChangePrefs = async newPrefs => {
+    setTags(newPrefs);
+    updatePlaces(markerPosition, newPrefs);
     const heatmapData = await queryHeatmap({ tags: newPrefs });
     console.log("Heatmap: ", heatmapData)
     setHeatmap(heatmapData);
   }
   const onMapClick = async (event) => {
-    setMarker(event.latLng);
-    const places = await queryPlaces(event.latLng.lat, event.latLng.lng);
+    setMarkerPosition(event.latLng);
+    updatePlaces(event.latLng, tags)
     console.log("Places: ", places)
-    setPlaces(places);
-    animateCSS('.placescard', 'pulse')
   }
 
   return (
@@ -46,7 +55,7 @@ function App() {
           <Prefdropdown onChange={onChangePrefs} places={places} />
         </Col>
         <Col md="9" className="p-0">
-          <Map heatmap={heatmap} onClick={onMapClick} marker={marker} />
+          <Map heatmap={heatmap} onClick={onMapClick} marker={markerPosition} />
         </Col>
       </Row>
     </Container>
