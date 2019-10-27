@@ -40,7 +40,7 @@ const MapWithAMarker = withScriptjs(withGoogleMap(({ heatmap, onClick, marker })
         <HeatmapLayer
             data={heatmapWithLatLon}
             options={{
-                radius: 40,
+                radius: 120,
             }} />
 
         {marker && <Marker position={marker} />}
