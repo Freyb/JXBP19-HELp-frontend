@@ -1,16 +1,63 @@
-.prefcirclecontainer{
-    display: flex;
-    align-items: center;
+.prefcontainer {
+  display: flex;
+  align-items: center;
+}
+.prefcirclecontainer {
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
 }
 .prefcircle {
-    width: 15px;
-    height: 15px;
-    border: solid 2px black;
-    border-radius: 100px;
-    margin: 0 0.1rem;
-    cursor: pointer;
+  width: 15px;
+  height: 15px;
+  box-sizing: content-box;
+  transition: background-color 0.5s ease;
 }
-
+.prefcircle:nth-child(2) {
+  border-right: 3px solid darkgray;
+}
 .activecircle {
-    background-color: red;
+  background-color: red;
+}
+.prefMinusmark {
+  height: 15px;
+  width: 15px;
+  position: relative;
+  cursor: pointer;
+}
+.prefMinusmark::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 2px;
+  background-color: black;
+  content: "";
+  transform: translate(-50%, -50%);
+}
+.prefPlusmark {
+  height: 15px;
+  width: 15px;
+  position: relative;
+  cursor: pointer;
+}
+.prefPlusmark::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 2px;
+  background-color: black;
+  content: "";
+  transform: translate(-50%, -50%);
+}
+.prefPlusmark::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 2px;
+  background-color: black;
+  content: "";
+  transform: translate(-50%, -50%) rotate(90deg);
 }
