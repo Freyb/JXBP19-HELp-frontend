@@ -21,8 +21,11 @@ function Prefdropdown(props) {
       ...selectedItems,
       { name: event.currentTarget.value, pref: 2 }
     ];
-    changeSelection(newData);
-    props.onChange(newData);
+    const filteredNewData = newData.filter((v, i, a) => a.indexOf(v) === i);
+    if (newData.length === filteredNewData.length) {
+      changeSelection(newData);
+      props.onChange(newData);
+    }
   };
 
   const changePref = (name, pref) => {
